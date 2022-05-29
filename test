@@ -1,0 +1,6 @@
+def get_cpu_temp():
+    path="/sys/class/thermal/thermal_zone0/temp"
+    f = open(path, "r")
+    temp_raw = int(f.read().strip())
+    temp_cpu = float(temp_raw / 1000.0)
+    return temp_cpu
